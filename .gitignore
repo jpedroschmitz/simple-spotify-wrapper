@@ -82,3 +82,6 @@ typings/
 # Compiled Lib
 lib
 dist
+
+# Tests examples
+example

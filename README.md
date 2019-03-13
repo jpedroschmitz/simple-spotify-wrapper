@@ -10,16 +10,24 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API
 
 ![Chrome](https://cloud.githubusercontent.com/assets/398893/3528328/23bc7bc4-078e-11e4-8752-ba2809bf5cce.png) | ![Firefox](https://cloud.githubusercontent.com/assets/398893/3528329/26283ab0-078e-11e4-84d4-db2cf1009953.png) | ![Opera](https://cloud.githubusercontent.com/assets/398893/3528330/27ec9fa8-078e-11e4-95cb-709fd11dac16.png) | ![Safari](https://cloud.githubusercontent.com/assets/398893/3528331/29df8618-078e-11e4-8e3e-ed8ac738693f.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) |
 --- | --- | --- | --- | --- |
-39+ ✔ | 42+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ |
+42+ ✔ | 39+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ |
 
 ## Dependencies
 
-This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to Node.
+This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to node.
 
 ## Installation
 
+You can install the library using `npm`:
+
 ```sh
 $ npm i simple-spotify-wrapper
+```
+
+or using `yarn`:
+
+```sh
+$ yarn add simple-spotify-wrapper
 ```
 
 ## How to use
@@ -50,48 +58,40 @@ var spotifyWrapper = require('spotify-wrapper');
 <script src="spotify-wrapper.umd.min.js"></script>
 ```
 
-After that the library will be available to the Global as `spotifyWrapper`. Follow an example:
+After that the library will be available to the Global as `SpotifyWrapper`. Check this example:
 
 ```js
-const albums = spotifyWrapper.searchAlbums('Choosen Artist');
+const spotify = new SpotifyWrapper({
+    token: 'PUT YOUR TOKEN HERE'
+});
+const albums = spotify.search.albums('Choose your artist');
+albums.then(data => console.log(data.albums.items));
 ```
 
 ## Methods
 
-> Follow the methods that the library provides.
+Below are all the methods that the library provide:
 
-### search(query, types)
+- [search.artists(query)]()
+- [search.albums(query)]()
+- [search.tracks(query)]()
+- [search.playlists(query)]()
+- [album.getAlbum(id)]()
+- [album.getAlbums(ids)]()
+- [album.getTracks(id)]()
 
-> Search for informations about artists, albums, tracks or playlists. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/).
+<!-- ### searchAlbums(query)
 
-**Arguments**
-
-| Argument | Type              | Options                                 |
-|----------|-------------------|-----------------------------------------|
-|`query`   |*string*           | 'Any search query'                      |
-|`type`    |*Array of strings* | ['artist', 'album', 'track', 'playlist']|
-
-**Example**
-
-```js
-search('Incubus', ['artist', 'album'])
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### searchAlbums(query)
-
-> Search for informations about Albums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
+> Search for informations about ALbums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
 
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'|
+|`query`   |*string* | 'Any search query'| -->
 
 
-**Example**
+<!-- **Example**
 
 ```js
 searchAlbums('Incubus')
@@ -100,123 +100,7 @@ searchAlbums('Incubus')
   })
 ```
 
-### searchArtists(query)
-
-> Search for informations about Artists with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *artist*.
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'|
-
-
-**Example**
-
-```js
-searchArtists('Incubus')
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### searchTracks(query)
-
-> Search for informations about Tracks with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *track*.
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'|
-
-
-**Example**
-
-```js
-searchTracks('Drive')
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### searchPlaylists(query)
-
-> Search for informations about Playlist with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *playlist*.
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'|
-
-
-**Example**
-
-```js
-searchPlaylists('Happy Day')
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### getAlbum(id)
-
-> Search for informations about a specific Album with provided id. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-album/).
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`id`   |*string* | 'Specific id'|
-
-
-**Example**
-
-```js
-getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### getAlbums(ids)
-
-> Search for informations about some Albums with all id's. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-several-albums/).
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`ids`   |*Array of strings* | ['id1', 'id2']|
-
-**Example**
-
-```js
-getAlbum(['4aawyAB9vmqN3uQ7FjRGTy', '1A2GTWGtFfWp7KSQTwWOyo'])
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### getAlbumTracks(id)
-
-> Search for all tracks in a specific Album with provided id. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-album-tracks/).
-
-**Arguments**
-
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`id`   |*string* | 'Specific id'|
-
-**Example**
-
-```js
-getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
-  .then(data => {
-    // do what you want with the data
-  })
-```
+#### [⇯ go back](#methods) -->
 
 ## Contributing
 
