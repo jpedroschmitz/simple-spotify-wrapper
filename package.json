@@ -1,0 +1,70 @@
+{
+  "name": "spotify-wrapper",
+  "version": "1.0.0",
+  "description": "An awesome wrapper to work with the Spotify Web API.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
+    "clear": "rimraf lib",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --bail --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --bail --watch --require @babel/register",
+    "test:coverage": "nyc npm test",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "functions": 80,
+    "lines": 80,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpedroschmitz/spotify-wrapper.git"
+  },
+  "keywords": [
+    "js",
+    "library",
+    "tdd",
+    "spotify",
+    "wrapper"
+  ],
+  "author": "João Pedro Schmitz <jpedroschmitz@hotmail.com> (https://www.joaopedro.cc/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpedroschmitz/spotify-wrapper/issues"
+  },
+  "homepage": "https://github.com/jpedroschmitz/spotify-wrapper#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "chai": "^3.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "husky": "^0.11.9",
+    "mocha": "^3.2.0",
+    "node-fetch": "^2.3.0",
+    "nyc": "^10.2.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {}
+}
