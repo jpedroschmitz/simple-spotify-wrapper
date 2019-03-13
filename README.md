@@ -1,4 +1,4 @@
-# Spotify Wrapper
+# Simple Spotify Wrapper
 
 [![Build Status](https://travis-ci.org/jpedroschmitz/spotify-wrapper.svg?branch=master)](https://travis-ci.org/jpedroschmitz/spotify-wrapper) [![Coverage Status](https://coveralls.io/repos/github/jpedroschmitz/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/jpedroschmitz/spotify-wrapper?branch=master)
 
@@ -19,7 +19,7 @@ This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests
 ## Installation
 
 ```sh
-$ npm install spotify-wrapper --save
+$ npm i simple-spotify-wrapper
 ```
 
 ## How to use

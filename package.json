@@ -1,8 +1,8 @@
 {
-  "name": "spotify-wrapper",
-  "version": "1.0.0",
-  "description": "An awesome wrapper to work with the Spotify Web API.",
-  "main": "src/index.js",
+  "name": "simple-spotify-wrapper",
+  "version": "1.0.1",
+  "description": "A small and awesome wrapper to work with the Spotify Web API.",
+  "main": "lib/index.js",
   "scripts": {
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
@@ -15,8 +15,13 @@
     "test:coverage": "nyc npm test",
     "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint"
+    "prepush": "npm run lint",
+    "prepublish": "npm run build:all"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "nyc": {
     "check-coverage": true,
     "functions": 80,
