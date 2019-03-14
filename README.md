@@ -4,17 +4,6 @@
 
 A small and awesome wrapper to work with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
 
-## Browser Support
-
-This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API is supported in the following browsers.
-
-![Chrome](https://cloud.githubusercontent.com/assets/398893/3528328/23bc7bc4-078e-11e4-8752-ba2809bf5cce.png) | ![Firefox](https://cloud.githubusercontent.com/assets/398893/3528329/26283ab0-078e-11e4-84d4-db2cf1009953.png) | ![Opera](https://cloud.githubusercontent.com/assets/398893/3528330/27ec9fa8-078e-11e4-95cb-709fd11dac16.png) | ![Safari](https://cloud.githubusercontent.com/assets/398893/3528331/29df8618-078e-11e4-8e3e-ed8ac738693f.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) |
---- | --- | --- | --- | --- |
-42+ ✔ | 39+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ |
-
-## Dependencies
-
-This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to node.
 
 ## Installation
 
@@ -35,11 +24,16 @@ $ yarn add simple-spotify-wrapper
 ### ES6
 
 ```js
-// to import a specific method
-import { method } from 'spotify-wrapper';
+// import the library
+import SpotifyWrapper from 'simple-spotify-wrapper';
 
-// to import everything
-import * as spotifyWrapper from 'spotify-wrapper';
+// create a instance
+const spotify = new SpotifyWrapper({
+  token: 'PUT YOUR TOKEN HERE'
+});
+
+const albums = spotify.search.albums('Choose your artist');
+albums.then(data => console.log(data.albums));
 ```
 
 ### CommonJS
@@ -72,39 +66,180 @@ albums.then(data => console.log(data.albums.items));
 
 Below are all the methods that the library provide:
 
-- [search.artists(query)]()
-- [search.albums(query)]()
-- [search.tracks(query)]()
-- [search.playlists(query)]()
-- [album.getAlbum(id)]()
-- [album.getAlbums(ids)]()
-- [album.getTracks(id)]()
+- [search.artists(query)](#search.artists(query))
+- [search.albums(query)](#search.albums(query))
+- [search.tracks(query)](#search.tracks(query))
+- [search.playlists(query)](#search.playlists(query))
+- [album.getAlbum(id)](#album.getAlbum(id))
+- [album.getAlbums(ids)](#album.getAlbums(ids))
+- [album.getTracks(id)](#album.getTracks(id))
 
-<!-- ### searchAlbums(query)
+### search.artists(query)
 
-> Search for informations about ALbums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
+> Search for informations about Artists with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *artist*.
 
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'| -->
+|`query`   |*string* | 'Any search query'|
 
 
-<!-- **Example**
+**Example**
 
 ```js
-searchAlbums('Incubus')
+search.artists('Isadora Pompeo')
   .then(data => {
-    // do what you want with the data
+    // do what you want here
   })
 ```
 
-#### [⇯ go back](#methods) -->
+#### [⇯ go back](#methods)
 
-## Contributing
+### search.albums(query)
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+> Search for informations about Albums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`query`   |*string* | 'Any search query'|
+
+
+**Example**
+
+```js
+spotify.search.albums('Isadora Pompeo')
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+### search.tracks(query)
+
+> Search for informations about Tracks with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *track*.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`query`   |*string* | 'Any search query'|
+
+
+**Example**
+
+```js
+spotify.search.tracks('Isadora Pompeo')
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+### search.playlists(query)
+
+> Search for informations about Playlists with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *playlist*.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`query`   |*string* | 'Any search query'|
+
+
+**Example**
+
+```js
+spotify.search.tracks('Isadora Pompeo')
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+### album.getAlbum(id)
+
+> Search for informations about a specific Album with a id.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`      |*string* | 'Specific id'|
+
+
+**Example**
+
+```js
+spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+### album.getAlbums(ids)
+
+> Search for informations about a specific Album with their ids.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`ids`      |*Array of strings* | ['id1', 'id2'] |
+
+
+**Example**
+
+```js
+spotify.album.getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '1A2GTWGtFfWp7KSQTwWOyo'])
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+### album.getTracks(id)
+
+> Search for all tracks from a specific album.
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`      |*string* | 'Specific id'|
+
+
+**Example**
+
+```js
+spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy')
+  .then(data => {
+    // do what you want here
+  })
+```
+
+#### [⇯ go back](#methods)
+
+## Browser Support
+
+This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API is supported in the following browsers.
+
+![Chrome](https://cloud.githubusercontent.com/assets/398893/3528328/23bc7bc4-078e-11e4-8752-ba2809bf5cce.png) | ![Firefox](https://cloud.githubusercontent.com/assets/398893/3528329/26283ab0-078e-11e4-84d4-db2cf1009953.png) | ![Opera](https://cloud.githubusercontent.com/assets/398893/3528330/27ec9fa8-078e-11e4-95cb-709fd11dac16.png) | ![Safari](https://cloud.githubusercontent.com/assets/398893/3528331/29df8618-078e-11e4-8e3e-ed8ac738693f.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) |
+--- | --- | --- | --- | --- |
+42+ ✔ | 39+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ |
+
+## Dependencies
+
+This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to node.
+
 
 ## Authors
 
@@ -112,6 +247,14 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 |:---------------------:|
 |  [João Pedro Schmitz](https://github.com/willianjusten/)   |
 
-## License
+## Contributing
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## Project License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Observation
+
+Observation: This library was develop in the ['JavaScript com TDD na prática'](https://www.udemy.com/js-com-tdd-na-pratica) course from [Willian Justen](http://github.com/willianjusten).
