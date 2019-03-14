@@ -66,13 +66,13 @@ albums.then(data => console.log(data.albums.items));
 
 Below are all the methods that the library provide:
 
-- [search.artists(query)](#search.artists(query))
-- [search.albums(query)](#search.albums(query))
-- [search.tracks(query)](#search.tracks(query))
-- [search.playlists(query)](#search.playlists(query))
-- [album.getAlbum(id)](#album.getAlbum(id))
-- [album.getAlbums(ids)](#album.getAlbums(ids))
-- [album.getTracks(id)](#album.getTracks(id))
+- [search.artists(query)](#searchartistsquery)
+- [search.albums(query)](#searchalbumsquery)
+- [search.tracks(query)](#searchtracksquery)
+- [search.playlists(query)](#searchplaylistsquery)
+- [album.getAlbum(id)](#albumgetalbumid)
+- [album.getAlbums(ids)](#albumgetalbumsids)
+- [album.getTracks(id)](#albumgettracksid)
 
 ### search.artists(query)
 
