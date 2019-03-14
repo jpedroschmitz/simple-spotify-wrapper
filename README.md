@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jpedroschmitz/spotify-wrapper.svg?branch=master)](https://travis-ci.org/jpedroschmitz/spotify-wrapper) [![Coverage Status](https://coveralls.io/repos/github/jpedroschmitz/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/jpedroschmitz/spotify-wrapper?branch=master)
 
-A small and awesome wrapper to work with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
+A small and awesome wrapper to get general information from the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
 
 
 ## Installation
@@ -63,6 +63,8 @@ albums.then(data => console.log(data.albums.items));
 ```
 
 ## Methods
+
+*Observation: In the next few weeks I plan to realese a new version that covers all GET methods from artists, playlists and tracks.*
 
 Below are all the methods that the library provide:
 
@@ -243,6 +245,12 @@ This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## To do list
+
+- Implement GET [artists](https://developer.spotify.com/console/artists/) methods;
+- Implement GET [playlists](https://developer.spotify.com/console/playlists/) methods;
+- Implement GET [tracks](https://developer.spotify.com/console/tracks/) methods;
 
 ## Authors
 
