@@ -240,16 +240,15 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API
 
 This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to node.
 
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Authors
 
 | ![João Pedro Schmitz](https://avatars2.githubusercontent.com/u/26466516?v=3&s=150)|
 |:---------------------:|
-|  [João Pedro Schmitz](https://github.com/willianjusten/)   |
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+|  [João Pedro Schmitz](https://github.com/jpedroschmitz/)   |
 
 ## Project License
 
@@ -257,4 +256,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Observation
 
-Observation: This library was develop in the ['JavaScript com TDD na prática'](https://www.udemy.com/js-com-tdd-na-pratica) course from [Willian Justen](http://github.com/willianjusten).
+This library was develop in the ['JavaScript com TDD na prática'](https://www.udemy.com/js-com-tdd-na-pratica) course from [Willian Justen](http://github.com/willianjusten).
