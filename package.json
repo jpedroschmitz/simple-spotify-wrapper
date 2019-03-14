@@ -1,6 +1,6 @@
 {
   "name": "simple-spotify-wrapper",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "description": "A small and awesome wrapper to work with the Spotify Web API.",
   "main": "lib/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --bail --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --bail --require @babel/register --watch",
     "test:coverage": "nyc npm test",
     "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "prepublish": "npm run build:all"
