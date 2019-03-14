@@ -1,7 +1,7 @@
 import album from './album';
 import search from './search';
 
-import API_URL from '../data/config';
+import API_URL from './config';
 
 export default class SpotifyWrapper {
   constructor(options) {

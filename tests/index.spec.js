@@ -3,7 +3,6 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import API_URL from '../data/config';
 import SpotifyWrapper from '../src/index';
 
 chai.use(sinonChai);
@@ -27,7 +26,7 @@ describe('SpotifyWrapper Library', () => {
   it('should use the default apiURL if not provided', () => {
     let spotify = new SpotifyWrapper({});
 
-    expect(spotify.apiURL).to.be.equal(API_URL);
+    expect(spotify.apiURL).to.be.equal('https://api.spotify.com/v1/');
   });
 
   it('should receive token as an option', () => {
