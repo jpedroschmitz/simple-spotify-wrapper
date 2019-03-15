@@ -1,6 +1,6 @@
 # Simple Spotify Wrapper
 
-[![Build Status](https://travis-ci.org/jpedroschmitz/spotify-wrapper.svg?branch=master)](https://travis-ci.org/jpedroschmitz/spotify-wrapper) [![Coverage Status](https://coveralls.io/repos/github/jpedroschmitz/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/jpedroschmitz/spotify-wrapper?branch=master)
+[![Build Status](https://travis-ci.org/jpedroschmitz/simple-spotify-wrapper.svg?branch=master)](https://travis-ci.org/jpedroschmitz/simple-spotify-wrapper) [![Coverage Status](https://coveralls.io/repos/github/jpedroschmitz/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/jpedroschmitz/spotify-wrapper?branch=master)
 
 A small and awesome wrapper to get general information from the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
 
