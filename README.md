@@ -242,9 +242,23 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API
 
 This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to node.
 
-## Contributing
+## Testing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+To run the tests you can use the following command inside the project folder:
+
+```sh
+npm test
+```
+
+Or if you want to test the coverage use:
+
+```sh
+npm run test:coverage
+```
+
+## Projects using this library
+
+- [Spotify Player](https://github.com/jpedroschmitz/spotify-player)
 
 ## To do list
 
@@ -258,10 +272,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 |:---------------------:|
 |  [João Pedro Schmitz](https://github.com/jpedroschmitz/)   |
 
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
 ## Project License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Observation
-
-This library was develop in the ['JavaScript com TDD na prática'](https://www.udemy.com/js-com-tdd-na-pratica) course from [Willian Justen](http://github.com/willianjusten).
