@@ -256,21 +256,16 @@ Or if you want to test the coverage use:
 npm run test:coverage
 ```
 
-## Projects using this library
+## Projects using the library
+
+> If you want to submit your application read the [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 - [Spotify Player](https://github.com/jpedroschmitz/spotify-player)
 
-## To do list
+## Upcoming methods :)
 
-- Implement GET [artists](https://developer.spotify.com/console/artists/) methods;
-- Implement GET [playlists](https://developer.spotify.com/console/playlists/) methods;
-- Implement GET [tracks](https://developer.spotify.com/console/tracks/) methods;
+If you want to help in the project or see the upcoming methods check this [link](https://github.com/jpedroschmitz/simple-spotify-wrapper/issues/1).
 
-## Authors
-
-| ![João Pedro Schmitz](https://avatars2.githubusercontent.com/u/26466516?v=3&s=150)|
-|:---------------------:|
-|  [João Pedro Schmitz](https://github.com/jpedroschmitz/)   |
 
 ## Contributing
 
@@ -279,3 +274,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Project License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Authors
+
+| ![João Pedro Schmitz](https://avatars2.githubusercontent.com/u/26466516?v=3&s=150)|
+|:---------------------:|
+|  [João Pedro Schmitz](https://github.com/jpedroschmitz/)   |
