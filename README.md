@@ -64,8 +64,6 @@ albums.then(data => console.log(data.albums.items));
 
 ## Methods
 
-*Observation: In the next few weeks I plan to realese a new version that covers all GET methods from artists, playlists and tracks.*
-
 Below are all the methods that the library provide:
 
 - [search.artists(query)](#searchartistsquery)
