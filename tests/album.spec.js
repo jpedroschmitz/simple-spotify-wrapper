@@ -13,7 +13,7 @@ describe('Album', () => {
   let spotify;
   let stubedFetch;
 
-  beforeEach( () => {
+  beforeEach(() => {
     spotify = new SpotifyWrapper({
       token: 'foo'
     });
